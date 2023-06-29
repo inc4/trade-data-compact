@@ -6,13 +6,8 @@ GOFLAGS	:= -trimpath
 
 all: build
 
-# TODO Use this if cmd/main.go used
 build: $(SRC)
-	go build $(GOFLAGS) -o $(BINDIR)/example ./cmd
-
-# TODO Use this if cmd/<names> used
-#build: $(SRC)
-#	go build $(GOFLAGS) -o $(BINDIR)/ ./cmd/...
+	go build $(GOFLAGS) -o $(BINDIR)/compact ./cmd
 
 clean:
 	@rm -rf '$(BINDIR)'

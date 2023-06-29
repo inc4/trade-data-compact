@@ -1,0 +1,11 @@
+type: tardis
+name_column: symbol
+price_column: mark_price
+columns:
+  - symbol
+  - type
+  - timestamp
+  - strike_price
+  - expiration
+  - mark_price
+  - mark_iv

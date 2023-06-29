@@ -1,28 +1,34 @@
-# go-template
+# Market Trade Data Parser
 
-[![Test status](https://github.com/inc4/go-template/workflows/Checks/badge.svg)](https://github.com/inc4/go-template/actions?query=workflow%3A%22Checks%22)
+The Parser is a command-line utility that condenses price data from CSV files.
+It reads CSV data from the standard input, processes it based on a specified
+price difference threshold, and outputs data when the price has changed
+significantly.
 
-This template can be used when creating a new Golang repository. Choose it when
-you create a repository in GitHub web interface. Or use `--template` flag when
-staring `gh repo create` command.
+## Configuration
 
-Directory structure is inspired by https://github.com/golang-standards/project-layout.
+The program takes its configuration from a `compact.yaml` file that should be
+located in the current directory or any upper directory. Alternatively, you can
+specify a path where the `compact.yaml` will be searched. The search will
+commence from the specified directory and extend upwards.
 
-## Getting started
+Several types of data are supported. Each type has its own configuration
+structure. Examples can be found in [examples/](./examples).
 
-- Review all files, if you haven't done it before
-- Remove examples, all readmes (this one needs to be rewritten)
+## Usage
 
-## Where to put the code
+To use the program, pipe the CSV data into the program as follows:
 
-`/cmd` should not contain a lot of code, most of the code is in packages.
+```shell
+cat data.csv | ./bin/compact > output.csv
+```
 
-https://github.com/golang-standards/project-layout propose to have the code
-in `/pkg` and `/internal`. But it's ok to have it in `/yourpkg` if you have few
-packages. Do not name packages like `pkg/api-db`, do this `pkg/api/db` instead.
+This will read the CSV data from `data.csv`, process it, and then write the
+filtered data to `output.csv`.
 
-`/pkg` is for packages that can be used externally. Unless you have a big
-project use `/pkg` for all packages.
+Or, specify the path where the config can be found. Let's assume that the
+config is located in `data/deribit/compact.yaml`:
 
-`/internal` is for internal packages, not intended for external usage, but
-use it if you really need to fine tune what can be imported from outside.
+```shell
+cat data/deribit/OPTIONS/options_chain/2023/04/2023-04-15.csv | ./bin/compact data/deribit/OPTIONS/options_chain/2023/04 > output.csv
+```

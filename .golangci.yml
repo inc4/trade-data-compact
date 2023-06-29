@@ -12,3 +12,10 @@ linters:
     - prealloc
     - revive
     - unconvert
+linters-settings:
+  depguard:
+    rules:
+      main:
+        allow:
+          - $gostd
+          - github.com/inc4/trade-data-compact
