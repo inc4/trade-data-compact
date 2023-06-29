@@ -1,4 +1,4 @@
-BINDIR	:= $(CURDIR)/bin
+BINDIR	:= bin
 SRC	:= $(shell find . -type f -name '*.go' -print) go.mod go.sum
 GOFLAGS	:= -trimpath
 
