@@ -1,0 +1,14 @@
+linters:
+  enable:
+    - bodyclose
+    - depguard
+    - dupl
+    - goconst
+    - gocritic
+    - gofmt
+    - goimports
+    - misspell
+    - nakedret
+    - prealloc
+    - revive
+    - unconvert
