@@ -1,6 +1,6 @@
 # Market Trade Data Parser
 
-[![Test status](https://github.com/inc4/trade-data-compact/workflows/Checks/badge.svg)](https://github.com/inc4/trade-data-compact/actions?query=workflow%3A%22Checks%22)
+[![Checks](https://github.com/inc4/trade-data-compact/actions/workflows/checks.yaml/badge.svg)](https://github.com/inc4/trade-data-compact/actions/workflows/checks.yaml)
 
 The Parser is a command-line utility that condenses price data from CSV files.
 It reads CSV data from the standard input, processes it based on a specified
